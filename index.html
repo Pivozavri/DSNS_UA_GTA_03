@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="uk">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>DSNS — Приклад сторінки (GitHub Pages)</title>
+  <meta name="description" content="Приклад односторінкового сайту в стилі прикладу з Tilda — готово для публікації на GitHub Pages." />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&amp;display=swap" rel="stylesheet">
+  <style>
+    :root{--bg:#f7f8fb;--card:#ffffff;--accent:#0b5cff;--muted:#6b7280;--glass: rgba(255,255,255,0.6)}
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{font-family:Inter,system-ui,Segoe UI,Roboto,Helvetica,Arial,sans-serif;margin:0;background:linear-gradient(180deg,var(--bg),#eef2ff);color:#0f172a}
+    .wrap{max-width:1100px;margin:32px auto;padding:24px}
+    header{display:flex;justify-content:space-between;align-items:center;margin-bottom:28px}
+    .brand{display:flex;align-items:center;gap:12px}
+    .logo{width:56px;height:56px;border-radius:10px;background:linear-gradient(135deg,var(--accent),#7c3aed);display:flex;align-items:center;justify-content:center;color:white;font-weight:700}
+    nav a{margin-left:18px;color:var(--muted);text-decoration:none;font-weight:600}
+    .hero{display:grid;grid-template-columns:1fr 380px;gap:28px;align-items:center;margin-bottom:28px}
+    @media (max-width:900px){.hero{grid-template-columns:1fr}.wrap{padding:16px}}
+    .card{background:var(--card);border-radius:14px;box-shadow:0 6px 30px rgba(16,24,40,0.06);padding:32px}
+    h1{font-size:28px;margin:0 0 8px}
+    p.lead{margin:0 0 18px;color:var(--muted)}
+    .stats{display:flex;gap:12px;margin-top:12px}
+    .stat{background:var(--glass);padding:10px 14px;border-radius:10px;font-weight:600}
+    .aside{position:relative}
+    .card.small{padding:18px}
+    .form-row{display:flex;gap:8px;margin-top:12px}
+    .form-row input{flex:1;padding:10px;border:1px solid #e6e9ef;border-radius:8px}
+    .btn{display:inline-block;padding:10px 14px;border-radius:10px;background:var(--accent);color:white;font-weight:700;text-decoration:none}
+    .features{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:24px}
+    @media (max-width:900px){.features{grid-template-columns:repeat(1,1fr)}}
+    .feature{background:linear-gradient(180deg,#ffffff, #fbfdff);border-radius:10px;padding:16px;box-shadow:0 4px 20px rgba(11,92,255,0.06)}
+    .feature h3{margin:0 0 8px;font-size:16px}
+    .feature p{margin:0;color:var(--muted);font-size:14px}
+    footer{margin-top:36px;color:var(--muted);font-size:14px;display:flex;justify-content:space-between;align-items:center}
+    .muted{color:var(--muted)}
+    .center{text-align:center}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div class="brand">
+        <div class="logo">DS</div>
+        <div>
+          <div style="font-weight:700">DSNS — Демонстрація</div>
+          <div class="muted" style="font-size:12px">Мінімалістичний GitHub Pages шаблон</div>
+        </div>
+      </div>
+      <nav>
+        <a href="#about">Про</a>
+        <a href="#services">Сервіси</a>
+        <a href="#contact">Контакти</a>
+      </nav>
+    </header>
+    <section class="hero">
+      <div class="card">
+        <h1>Оновлення &amp; сповіщення — простий інтерфейс</h1>
+        <p class="lead">Шаблон односторінкового сайту, натхненний прикладом на Tilda. Підходить для публікації на GitHub Pages або в складі статичного сайту.</p>
+        <div class="stats">
+          <div class="stat">Випуски: <strong>12</strong></div>
+          <div class="stat">Підписники: <strong>4,200</strong></div>
+          <div class="stat">Останнє: <strong>сьогодні</strong></div>
+        </div>
+        <div class="features" id="services">
+          <div class="feature">
+            <h3>Сповіщення</h3>
+            <p>Легко відправляйте повідомлення та оновлення користувачам по підписці.</p>
+          </div>
+          <div class="feature">
+            <h3>Архів</h3>
+            <p>Публікуйте оголошення й зберігайте їх у простому архіві.</p>
+          </div>
+          <div class="feature">
+            <h3>Легке налаштування</h3>
+            <p>Статичний HTML + CSS — розгорнути на GitHub Pages за хвилини.</p>
+          </div>
+        </div>
+      </div>
+      <aside class="aside">
+        <div class="card small">
+          <strong>Підписатися</strong>
+          <p class="muted" style="margin-top:6px">Отримуйте сповіщення на email.</p>
+          <form id="subForm" style="margin-top:12px">
+            <div class="form-row">
+              <input type="email" id="email" placeholder="Ваш email" required />
+              <button class="btn" type="submit">Підписатися</button>
+            </div>
+            <div id="msg" class="muted" style="margin-top:10px;font-size:13px"></div>
+          </form>
+        </div>
+        <div style="height:18px"></div>
+        <div class="card small center">
+          <div style="font-size:13px;font-weight:700">Останні оголошення</div>
+          <div class="muted" style="margin-top:8px;font-size:13px">#12 — Реліз сервісу</div>
+          <div class="muted" style="font-size:13px">#11 — Оновлення API</div>
+        </div>
+      </aside>
+    </section>
+    <section id="about" class="card" style="margin-top:18px">
+      <h2 style="margin-top:0">Про проєкт</h2>
+      <p class="muted">Ця сторінка — статичний приклад, створений для швидкого розгортання. Вона естетично нагадує структуру сторінки на Tilda, але повністю написана вручну і не використовує конструктор.</p>
+    </section>
+    <footer>
+      <div>© DSNS • Зроблено для прикладу</div>
+      <div class="muted">Готово для GitHub Pages</div>
+    </footer>
+  </div>
+  <script>
+    const form = document.getElementById('subForm');
+    const msg = document.getElementById('msg');
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const email = document.getElementById('email').value.trim();
+      if(!email || !/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)){
+        msg.textContent = 'Введіть, будь ласка, валідний email.';
+        return;
+      }
+      let list = JSON.parse(localStorage.getItem('dsns_subs') || '[]');
+      if(list.includes(email)){
+        msg.textContent = 'Ви вже підписані.';
+      } else {
+        list.push(email);
+        localStorage.setItem('dsns_subs', JSON.stringify(list));
+        msg.textContent = 'Дякуємо! Підписка успішна.';
+        form.reset();
+      }
+    });
+  </script>
+</body>
+</html>
