@@ -1,0 +1,9 @@
+# MacOS
+.DS_Store
+
+# Node / npm (на випадок, якщо колись додасте)
+node_modules/
+
+# IDE
+.vscode/
+.idea/
